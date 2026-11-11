@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Brasa | Hamburguesas a la parrilla</title>
+  <meta name="description" content="Hamburguesas de carne a la parrilla, papas y cerveza fría. Mira el menú y reserva tu mesa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="#inicio">Casa Brasa</a>
+    <button class="menu-boton" id="menuBoton" aria-expanded="false" aria-controls="navegacion" aria-label="Abrir menú de navegación">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="navegacion" class="navegacion" aria-label="Principal">
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#reservas">Reservas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <h1>Carne a la parrilla, pan tostado y queso fundido.</h1>
+        <p>Hamburguesas hechas al momento, con papas y cerveza bien fría.</p>
+        <a class="boton" href="#menu">Ver el menú</a>
+      </div>
+      <img class="hero-img" src="img/hamburguesa-crujiente.png" alt="Hamburguesa con queso y papas rizadas sobre una tabla de madera">
+    </section>
+
+    <section class="seccion" id="menu">
+      <h2>Nuestro menú</h2>
+      <p class="intro">Toca “Ver ingredientes” en cada plato para ver de qué está hecho.</p>
+      <div class="rejilla">
+        <article class="plato">
+          <img src="img/hamburguesa-bacon.png" alt="Hamburguesa con tocineta y queso cheddar" loading="lazy">
+          <div class="plato-info">
+            <h3>La Ahumada</h3>
+            <p class="precio">$26.000</p>
+            <button class="ingredientes-boton" aria-expanded="false">Ver ingredientes</button>
+            <ul class="ingredientes" hidden>
+              <li>Carne de res de 180 g</li><li>Tocineta crocante</li><li>Queso cheddar</li><li>Pan brioche tostado</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plato">
+          <img src="img/hamburguesa-medianoche.png" alt="Hamburguesa alta con lechuga, cebolla morada y tocineta" loading="lazy">
+          <div class="plato-info">
+            <h3>La Medianoche</h3>
+            <p class="precio">$29.000</p>
+            <button class="ingredientes-boton" aria-expanded="false">Ver ingredientes</button>
+            <ul class="ingredientes" hidden>
+              <li>Carne de res de 180 g</li><li>Cheddar fundido</li><li>Tocineta y cebolla morada</li><li>Lechuga romana</li><li>Mayonesa de ajo</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plato">
+          <img src="img/hamburguesa-clasica.png" alt="Hamburguesa clásica con tomate y salsa, acompañada de papas" loading="lazy">
+          <div class="plato-info">
+            <h3>La Clásica</h3>
+            <p class="precio">$24.000</p>
+            <button class="ingredientes-boton" aria-expanded="false">Ver ingredientes</button>
+            <ul class="ingredientes" hidden>
+              <li>Carne de res de 160 g</li><li>Queso cheddar</li><li>Tomate, cebolla y lechuga</li><li>Salsa de la casa</li><li>Papas a la francesa</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plato">
+          <img src="img/hamburguesa-crujiente.png" alt="Hamburguesa con papas rizadas" loading="lazy">
+          <div class="plato-info">
+            <h3>La Crujiente</h3>
+            <p class="precio">$25.000</p>
+            <button class="ingredientes-boton" aria-expanded="false">Ver ingredientes</button>
+            <ul class="ingredientes" hidden>
+              <li>Carne de res de 160 g</li><li>Queso americano</li><li>Cebolla morada y lechuga</li><li>Papas rizadas</li>
+            </ul>
+          </div>
+        </article>
+        <article class="plato">
+          <img src="img/hamburguesa-pepinillo.png" alt="Hamburguesa con pepinillos junto a papas y una cerveza" loading="lazy">
+          <div class="plato-info">
+            <h3>La Pepinillo</h3>
+            <p class="precio">$27.000</p>
+            <button class="ingredientes-boton" aria-expanded="false">Ver ingredientes</button>
+            <ul class="ingredientes" hidden>
+              <li>Carne de res de 180 g</li><li>Queso cheddar</li><li>Pepinillos y cebolla morada</li><li>Lechuga</li><li>Papas y cerveza artesanal</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion nosotros" id="nosotros">
+      <h2>Nosotros</h2>
+      <p>Casa Brasa nació de una idea simple: una buena hamburguesa se hace con buena carne, pan fresco y paciencia en la parrilla. Molemos la carne cada mañana y tostamos el pan al pedido.</p>
+      <p>Abrimos de martes a domingo, de 12:00 m. a 10:00 p. m.</p>
+    </section>
+
+    <section class="seccion reservas" id="reservas">
+      <h2>Reserva tu mesa</h2>
+      <form id="formReserva" novalidate>
+        <label>Nombre
+          <input type="text" id="nombre" name="nombre" required>
+        </label>
+        <label>Fecha
+          <input type="date" id="fecha" name="fecha" required>
+        </label>
+        <label>Personas
+          <input type="number" id="personas" name="personas" min="1" max="12" value="2" required>
+        </label>
+        <button class="boton" type="submit">Reservar mesa</button>
+        <p id="mensaje" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p><strong>Casa Brasa</strong> · Calle 5 #10-20, Zipaquirá</p>
+    <p>Martes a domingo, 12:00 m. a 10:00 p. m.</p>
+    <p>Tel. 300 000 0000</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

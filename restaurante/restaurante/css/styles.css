@@ -1,0 +1,76 @@
+:root{
+  --verde:#123B36; --mostaza:#F2B632; --salsa:#B8321F; --papel:#FFFDF8; --texto:#1E2A28;
+  --titulos:"Alfa Slab One","Rockwell","Georgia",serif;
+  --cuerpo:"Nunito Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--cuerpo);color:var(--texto);background:var(--papel);line-height:1.6}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--titulos);font-weight:400;line-height:1.15;margin:0 0 .5em}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--salsa);outline-offset:2px}
+
+/* Encabezado */
+.encabezado{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.5rem;background:var(--verde)}
+.logo{font-family:var(--titulos);font-size:1.4rem;color:var(--mostaza);text-decoration:none}
+.navegacion{display:flex;gap:1.5rem}
+.navegacion a{color:var(--papel);text-decoration:none;font-weight:600}
+.navegacion a:hover{color:var(--mostaza)}
+.menu-boton{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
+.menu-boton span{display:block;width:26px;height:3px;margin:5px 0;background:var(--mostaza)}
+
+/* Hero */
+.hero{display:flex;align-items:center;gap:2rem;padding:3rem 1.5rem;background:var(--mostaza)}
+.hero-texto{flex:1;max-width:34rem;margin-left:auto}
+.hero h1{font-size:clamp(2rem,4.5vw,3.4rem);color:var(--verde)}
+.hero p{font-size:1.15rem;max-width:30rem}
+.hero-img{flex:1;max-width:620px;border-radius:50% 50% 8px 8px / 40% 40% 8px 8px;aspect-ratio:4/3;object-fit:cover;margin-right:auto}
+.boton{display:inline-block;padding:.8rem 1.6rem;background:var(--salsa);color:#fff;border:0;border-radius:6px;font:700 1rem var(--cuerpo);text-decoration:none;cursor:pointer}
+.boton:hover{background:var(--verde)}
+
+/* Secciones */
+.seccion{max-width:1100px;margin:0 auto;padding:4rem 1.5rem}
+.seccion h2{font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--verde)}
+.intro{max-width:60ch}
+
+/* Menú: CSS Grid */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.plato{background:#fff;border:2px solid var(--verde);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.plato img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.plato-info{padding:1rem 1.2rem 1.2rem}
+.plato h3{font-size:1.3rem;margin-bottom:.2rem}
+.precio{margin:0 0 .8rem;font-weight:700;color:var(--salsa)}
+.ingredientes-boton{background:none;border:2px solid var(--verde);color:var(--verde);padding:.4rem .9rem;border-radius:6px;font:700 .9rem var(--cuerpo);cursor:pointer}
+.ingredientes-boton[aria-expanded="true"]{background:var(--verde);color:var(--papel)}
+.ingredientes{margin:.8rem 0 0;padding-left:1.2rem}
+
+/* Nosotros y reservas */
+.nosotros p{max-width:60ch}
+.reservas{background:var(--verde);max-width:none}
+.reservas h2{color:var(--mostaza);max-width:1100px;margin-inline:auto}
+#formReserva{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end}
+#formReserva label{display:flex;flex-direction:column;gap:.3rem;color:var(--papel);font-weight:600;flex:1 1 180px}
+#formReserva input{padding:.7rem;border:2px solid transparent;border-radius:6px;font:1rem var(--cuerpo)}
+#formReserva input.error{border-color:var(--salsa)}
+#mensaje{flex-basis:100%;margin:0;color:var(--mostaza);font-weight:700;min-height:1.5em}
+
+/* Pie */
+.pie{padding:2rem 1.5rem;background:var(--texto);color:var(--papel);text-align:center}
+.pie p{margin:.2rem 0}
+
+/* Tableta */
+@media (max-width:900px){
+  .hero{flex-direction:column}
+  .hero-texto{margin:0;max-width:none}
+  .hero-img{margin:0;width:100%}
+}
+
+/* Móvil */
+@media (max-width:700px){
+  .menu-boton{display:block}
+  .navegacion{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--verde)}
+  .navegacion.abierto{display:flex}
+  .navegacion a{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,.15)}
+  .seccion{padding:3rem 1.2rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
